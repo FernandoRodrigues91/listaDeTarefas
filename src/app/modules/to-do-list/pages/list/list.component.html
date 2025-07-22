@@ -4,17 +4,24 @@
     loading="lazy"
     />
 
-    <button class="btn btn-primary">Crie uma lista de tarefas</button>
-
+    @if (addItem()) {
+    <button class="btn btn-primary" (click)="addItem.set(false)">
+        Crie uma lista de tarefas
+    </button>
+    } @else {
     <div>
         <label class="input-labe-text" for="iputValue">
             <input 
                 type="text"
                 placeholder="Adicione um novo item" 
                 id="inputValue" 
-                autofocus/>
-
-            <button class="btn btn-primary-circle" title="Adicionar um novo item"></button>
+                autofocus
+            />
+            <button 
+                class="btn btn-primary-circle" 
+                title="Adicionar um novo item"
+            ></button>
         </label>
     </div>
+    }
 </div>
