@@ -1,1 +1,17 @@
-<p>input-add-item works!</p>
+    <div>
+        <label class="input-labe-text" for="iputValue">
+            <input 
+                type="text"
+                (keyup.enter)="focusAndAddItem(inputText.value)"
+                placeholder="Adicione um novo item" 
+                id="inputValue" 
+                autofocus
+                #inputText
+            />
+            <button 
+                class="btn btn-primary-circle" 
+                title="Adicionar um novo item"
+                (click)="focusAndAddItem(inputText.value)"
+            ></button>
+        </label>
+    </div>

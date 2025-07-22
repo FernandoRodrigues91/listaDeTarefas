@@ -6,7 +6,7 @@ import { InputAddItemComponent } from '../../components/input-add-item/input-add
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [InputAddItemComponent],
+  imports:[InputAddItemComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
