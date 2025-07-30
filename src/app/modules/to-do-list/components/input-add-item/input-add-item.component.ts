@@ -15,17 +15,17 @@ export class InputAddItemComponent {
 
   @ViewChild('inputText') inputText!: ElementRef;
 
-  @Output() public outputList = new EventEmitter<IListItems>();
+  @Output() public outpuAddtListItem = new EventEmitter<IListItems>();
   public focusAndAddItem(value: string) {
     if (value) {
       this.#cdr.detectChanges();
       this.inputText.nativeElement.value = '';
 
-      const dataAtual = new Date();
-      const timestamp = dataAtual.getTime();
+      const currentDate = new Date();
+      const timestamp = currentDate.getTime();
       const id = `ID ${timestamp}`;
 
-      this.outputList.emit({
+      this.outpuAddtListItem.emit({
         id,
         checked: false,
         value
