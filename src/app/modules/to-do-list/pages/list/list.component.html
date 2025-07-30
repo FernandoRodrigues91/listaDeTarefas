@@ -9,7 +9,9 @@
         Crie uma lista de tarefas
     </button>
     } @else {
-        <app-input-add-item />
+    <app-input-add-item (outputAddListItem)="getInputAndAddItem($event)" />
 
     }
 </div>
+
+{{getListItems | json}}
