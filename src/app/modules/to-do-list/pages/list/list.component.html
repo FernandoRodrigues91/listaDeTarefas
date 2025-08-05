@@ -1,3 +1,4 @@
+@if (!getListItems().length) {
 <div class="container">
     <img src="assets/img/task-list-null.png"
     alt="Sua lista está vazia - imagem ilustrativa"
@@ -9,9 +10,12 @@
         Crie uma lista de tarefas
     </button>
     } @else {
-    <app-input-add-item [inputListItems]="getListItems()" (outputAddListItem)="getInputAndAddItem($event)" />
-
+    <app-input-add-item [inputListItems]="getListItems()"
+     (outputAddListItem)="getInputAndAddItem($event)" />
     }
+    
 </div>
-
-{{getListItems() | json}}
+}@else {
+    <app-input-add-item [inputListItems]="getListItems()" 
+    (outputAddListItem)="getInputAndAddItem($event)" />
+}
