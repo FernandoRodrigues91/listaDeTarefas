@@ -1,4 +1,8 @@
-    <div>
+   <header [ngClass]="{'has-items': inputListItems.length}">
+    @if (inputListItems.length) {
+        <h1>Minha Lista</h1>
+    }
+   <div>
         <label class="input-labe-text" for="iputValue">
             <input 
                 type="text"
@@ -7,6 +11,7 @@
                 id="inputValue" 
                 autofocus
                 #inputText
+                [ngClass]="{'remove-margin-bottom': inputListItems.length}"
             />
             <button 
                 class="btn btn-primary-circle" 
@@ -15,3 +20,5 @@
             ></button>
         </label>
     </div>
+    </header>
+

@@ -1,12 +1,13 @@
-import { ChangeDetectorRef, Component, ElementRef, EventEmitter, inject, Output, output, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, inject, Input, input, Output, output, ViewChild } from '@angular/core';
 
 // Interface
 import { IListItems } from '../../interface/IListItems.interface';
+import { JsonPipe, NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-input-add-item',
   standalone: true,
-  imports: [],
+  imports: [NgClass],
   templateUrl: './input-add-item.component.html',
   styleUrl: './input-add-item.component.scss'
 })
@@ -15,6 +16,7 @@ export class InputAddItemComponent {
 
   @ViewChild('inputText') inputText!: ElementRef;
 
+  @Input({ required: true }) public inputListItems: IListItems[] = [];
   @Output() public outputAddListItem = new EventEmitter<IListItems>();
   public focusAndAddItem(value: string) {
     if (value) {
