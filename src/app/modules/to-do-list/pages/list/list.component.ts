@@ -8,7 +8,7 @@ import { JsonPipe } from '@angular/common';
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports:[InputAddItemComponent, JsonPipe],
+  imports:[InputAddItemComponent,],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
