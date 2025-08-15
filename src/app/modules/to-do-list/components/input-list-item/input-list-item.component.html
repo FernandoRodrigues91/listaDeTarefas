@@ -1,1 +1,15 @@
-<p>input-list-item works!</p>
+@for (item of inputListItems; track item) {
+    <label class="input-label-text" [for]="item.id">
+        <input type="checkbox" #inputCheckbox [checked]="item.checked"/>
+        <input 
+        type="text" 
+        #inputValue 
+        [id]="item.id" 
+        [value]="item.value" 
+        placeholder="Adicione um valor" 
+        autofocus
+        />
+
+        <button class="btn btn-dangercircle" title="Delete este Item"></button>
+    </label>
+}
