@@ -10,7 +10,7 @@ import { IListItems } from '../../interface/IListItems.interface';
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports:[InputAddItemComponent,InputListItemComponent, ],
+  imports:[InputAddItemComponent, InputListItemComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })

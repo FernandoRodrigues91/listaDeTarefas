@@ -17,6 +17,7 @@ export class InputAddItemComponent {
   @ViewChild('inputText') inputText!: ElementRef;
 
   @Input({ required: true }) public inputListItems: IListItems[] = [];
+  
   @Output() public outputAddListItem = new EventEmitter<IListItems>();
   public focusAndAddItem(value: string) {
     if (value) {
