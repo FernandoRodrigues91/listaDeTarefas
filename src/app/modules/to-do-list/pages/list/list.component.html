@@ -21,7 +21,10 @@
     
     <main class="container">
         <h2>Pendências</h2>
-        <app-input-list-item [inputListItems]="getListItems()" />
+        <app-input-list-item [inputListItems]="listItemsStage('pending')" />
+
+        <h2>Concluidas</h2>
+        <app-input-list-item [inputListItems]="listItemsStage('completed')" />
     </main>
     
     <footer>
