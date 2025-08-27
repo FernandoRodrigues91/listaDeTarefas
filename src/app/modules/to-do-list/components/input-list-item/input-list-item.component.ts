@@ -12,8 +12,7 @@ import { IListItems } from '../../interface/IListItems.interface';
   styleUrl: './input-list-item.component.scss'
 })
 export class InputListItemComponent {
-
+  
   @Input({ required: true }) public inputListItems: IListItems[] = [];
-
 
 }
