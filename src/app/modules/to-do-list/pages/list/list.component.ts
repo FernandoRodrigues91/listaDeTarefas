@@ -34,12 +34,27 @@ export class ListComponent {
     return this.getListItems().filter((res: IListItems) => {
       if(value === 'pending'){
         return !res.checked;
-    }
+      } 
       if(value === 'completed'){
         return res.checked;
-  }
+      }
         return res;
   });
+}
+  public updateItemCheckbox(newItem: { id: string; checked: boolean; }) {
+    this.#setListItems.update((oldValue: IListItems[]) => {
+      oldValue.filter((res) =>{
+        if(res.id === newItem.id){
+          res.checked = newItem.checked;
+          return res
+        }
+        return res
+      })
+
+      return oldValue
+    }) 
+
+    return localStorage.setItem('@my-list', JSON.stringify(this.#setListItems()));
   }
   public deleteAllItems(){
    localStorage.removeItem('@my-list');
