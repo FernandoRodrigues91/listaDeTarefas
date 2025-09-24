@@ -1,4 +1,5 @@
 import { Component, signal } from '@angular/core';
+import Swal from 'sweetalert2';
 
 //component
 import { InputAddItemComponent } from '../../components/input-add-item/input-add-item.component';
@@ -9,6 +10,7 @@ import { IListItems } from '../../interface/IListItems.interface';
 
 //enum
 import { ELocalStorage } from '../../enum/ElocalStorage.enum';
+
 
 @Component({
   selector: 'app-list',
@@ -48,7 +50,8 @@ export class ListComponent {
       }
         return res;
   });
-}
+  }
+
   public updateItemCheckbox(newItem: { id: string; checked: boolean; }) {
     this.#setListItems.update((oldValue: IListItems[]) => {
       oldValue.filter((res) =>{
@@ -64,6 +67,7 @@ export class ListComponent {
 
     return this.#updateLocalStorage();
   }
+
   public updateItemText(newItem: { id: string; value: string; }) {
      this.#setListItems.update((oldValue: IListItems[]) => {
       oldValue.filter((res) =>{
@@ -82,14 +86,35 @@ export class ListComponent {
   }
 
   public deleteItem(id: string){
-    this.#setListItems.update((oldValue: IListItems[]) => {
+    Swal.fire({
+    title: "Tem Certeza?",
+    text: "Você NÃO poderá revertere isso!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sim, Delete o Item!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      this.#setListItems.update((oldValue: IListItems[]) => {
       return oldValue.filter((res) => res.id !== id);
     });
     return this.#updateLocalStorage();
+    }
+  });
+}    
 
-  }
   public deleteAllItems(){
-   localStorage.removeItem(ELocalStorage.MY_LIST);
-   return this.#setListItems.set(this.#parseItems());
+    
+  Swal.fire({
+    title: "Tem Certeza?",
+    text: "Você NÃO poderá revertere isso!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sim, Delete Tudo!"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem(ELocalStorage.MY_LIST);
+      return this.#setListItems.set(this.#parseItems());
+      }
+    });
   }
 }
