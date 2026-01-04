@@ -23,21 +23,28 @@ Este aplicativo permite que você:
 - **Angular Material:** Biblioteca de componentes UI que segue as diretrizes de design do Material Design, proporcionando uma interface bonita e consistente.
 - **TypeScript:** Linguagem de programação baseada em JavaScript, permitindo tipagem estática e maior segurança no desenvolvimento.
 
-## Como Rodar o Projeto Localmente
+---
 
-### Pré-requisitos
+## Estrutura do Projeto
 
-Certifique-se de ter as seguintes ferramentas instaladas na sua máquina:
+- **A estrutura de arquivos do projeto segue uma organização modular para facilitar a manutenção e escalabilidade**
 
-- **Node.js** (versão 14 ou superior)
-- **npm** (gerenciador de pacotes do Node.js)
-- **Angular CLI** (para rodar e gerenciar o projeto Angular)
+listaDeTarefas/
+│
+├── src/
+│   ├── app/
+│   │   ├── components/        # Componentes da lista de tarefas (Adicionar, Remover, Editar, etc.)
+│   │   ├── models/            # Modelos de dados (ex: Task)
+│   │   ├── services/          # Serviços para manipulação de dados (ex: TaskService)
+│   │   ├── app.module.ts      # Módulo principal da aplicação
+│   │   └── app.component.ts   # Componente raiz
+│   │
+│   ├── assets/                # Imagens e fontes
+│   ├── environments/          # Configurações de ambiente (produção e desenvolvimento)
+│   └── styles/                # Estilos globais (SASS/SCSS)
+│
+├── angular.json               # Arquivo de configuração do Angular
+├── package.json               # Gerenciador de dependências
+├── README.md                  # Este arquivo
+└── LICENSE                    # Licença do projeto
 
-### Passos para Executar Localmente
-
-1. **Clone o repositório:**
-
-   Clone o repositório do GitHub para sua máquina local com o seguinte comando:
-
-   ```bash
-   git clone https://github.com/FernandoRodrigues91/listaDeTarefas.git
