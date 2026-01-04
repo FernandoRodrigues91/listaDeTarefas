@@ -30,21 +30,38 @@ Este aplicativo permite que você:
 - **A estrutura de arquivos do projeto segue uma organização modular para facilitar a manutenção e escalabilidade**
 
 listaDeTarefas/
+
 │
+
 ├── src/
+
 │   ├── app/
+
 │   │   ├── components/        # Componentes da lista de tarefas (Adicionar, Remover, Editar, etc.)
+
 │   │   ├── models/            # Modelos de dados (ex: Task)
+
 │   │   ├── services/          # Serviços para manipulação de dados (ex: TaskService)
+
 │   │   ├── app.module.ts      # Módulo principal da aplicação
+
 │   │   └── app.component.ts   # Componente raiz
+
 │   │
+
 │   ├── assets/                # Imagens e fontes
+
 │   ├── environments/          # Configurações de ambiente (produção e desenvolvimento)
+
 │   └── styles/                # Estilos globais (SASS/SCSS)
+
 │
+
 ├── angular.json               # Arquivo de configuração do Angular
+
 ├── package.json               # Gerenciador de dependências
+
 ├── README.md                  # Este arquivo
+
 └── LICENSE                    # Licença do projeto
 
